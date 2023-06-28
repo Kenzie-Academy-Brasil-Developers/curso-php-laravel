@@ -11,17 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('transactions', function (Blueprint $table) {
             $table->uuid('id');
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->string('cpf')->unique();
-            $table->string('password');
-            $table->string('type');
-            $table->decimal('balance')->default(0);
+            $table->decimal('value');
             $table->timestamps();
+            $table->uuid('payer_id');
+            $table->uuid('payee_id');
 
-            $table->primary('id');
+            $table->foreign('payer_id')->references('id')->on('users');
+            $table->foreign('payee_id')->references('id')->on('users');
         });
     }
 
@@ -30,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('transactions');
     }
 };

@@ -12,3 +12,13 @@ docker exec -it intro-php_laravel.test_1 /bin/sh
 
 [X] Verificar email existe
 [X] Verificar cpf existe
+
+
+Transaction 
+[x] Payer Existe
+[x] Payee Existe
+[x] Usario pagador não pode ser vendedor
+[x] Balance tem que ser maior ou igual o valor da transação
+[x] Subtrair o valor do payer
+[x] Somar o valor no payee
+[] Salva a transação
