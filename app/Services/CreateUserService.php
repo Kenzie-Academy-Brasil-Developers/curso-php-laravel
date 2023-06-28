@@ -12,8 +12,8 @@ use Illuminate\Support\Facades\Log;
 
 class CreateUserService {
     public function execute(array $data) {
-        Log::info('Usario: 33234324 service->');
-        Log::debug('Esse é um debug Usario service');
+        Log::info('Usuario: 33234324 service->');
+        Log::debug('Esse é um debug Usuario service');
 
         $userFound = User::firstWhere('email', $data['email']);
 
