@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->uuid('id');
+            $table->primary('id');
             $table->decimal('value');
             $table->timestamps();
             $table->uuid('payer_id');
